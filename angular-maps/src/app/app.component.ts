@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'server mappe';
+  title = 'Server mappe';
 
   strC = ''
-  strS = ''
 
   latC: number = 45.500537;
   lngC: number = 9.149400;
@@ -17,15 +16,17 @@ export class AppComponent {
   latS: number = 45.506738;
   lngS: number = 9.190766;
 
-  colorS: string = '';
   colorC: string = '';
 
-  onClickScuola(strS){
-    this.colorS = strS
-  }
+  triangle: Array<Point> =
+  [
+    {lngPoint:9.1, latPoint:45.5},
+    {lngPoint:9.0, latPoint:45.6},
+    {lngPoint:9.0, latPoint:45.4}
+  ]
 
-  onClickCasa(strC){
-    this.colorC = strC
+  onClickColor(str){
+    this.colorC = str
   }
 
   public iconHome = {
@@ -46,6 +47,14 @@ export class AppComponent {
 
   public iconDuomo = {
     url:'./assets/img/Duomo.ico',
+    scaledSize:{
+      width: 60,
+      height: 60
+    }
+  };
+
+  public iconPeru = {
+    url:'./assets/img/Star.ico',
     scaledSize:{
       width: 60,
       height: 60
