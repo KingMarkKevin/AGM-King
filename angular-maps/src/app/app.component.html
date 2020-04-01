@@ -1,0 +1,37 @@
+{{title}}
+
+<agm-map [latitude]="latC" [longitude]="lngC">
+
+<!--Marker casa-->
+  <agm-marker [latitude]="latC" [longitude]="lngC" [iconUrl]="iconHome">
+  </agm-marker>
+<!--Marker scuola-->
+  <agm-marker [latitude]="latS" [longitude]="lngS" [iconUrl]="iconScuola">
+  </agm-marker>
+<!--Marker Duomo-->
+  <agm-marker [latitude]=45.464157 [longitude]=9.191926 [iconUrl]="iconDuomo">
+  </agm-marker>
+<!--Cerchio zona casa-->
+  <agm-circle [latitude]="latC"
+  [longitude]="lngC"
+  [radius]="1500"
+  [fillColor]="colorC">
+  </agm-circle>
+<!--Cerchio zona scuola-->
+  <agm-circle [latitude]="latS"
+  [longitude]="lngS"
+  [radius]="1500"
+  [fillColor]="colorS">
+  </agm-circle>
+
+</agm-map>
+
+<p>Bottoni per il cercio di casa:</p>
+<button (click)="onClickCasa('green')">Green</button>
+<button (click)="onClickCasa('red')">Red</button>
+<button (click)="onClickCasa('yellow')">Yellow</button>
+
+<p>Bottoni per il cerchio di scuola:</p>
+<button (click)="onClickScuola('green')">Green</button>
+<button (click)="onClickScuola('red')">Red</button>
+<button (click)="onClickScuola('yellow')">Yellow</button>
