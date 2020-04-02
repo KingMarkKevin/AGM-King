@@ -1,5 +1,5 @@
-class Point
+export class Point
 {
-  latPoint : number;
-  lngPoint : number;
+  lat : number;
+  lng : number;
 }

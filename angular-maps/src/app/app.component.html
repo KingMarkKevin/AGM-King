@@ -2,37 +2,51 @@
 
 <agm-map [latitude]= "latC" [longitude]= "lngC">
 
-<!--Marker casa-->
+  <!--Marker casa-->
   <agm-marker [latitude]= "latC" [longitude]= "lngC" [iconUrl]= "iconHome">
   </agm-marker>
-<!--Marker scuola-->
+
+  <!--Marker scuola-->
   <agm-marker [latitude]= "latS" [longitude]= "lngS" [iconUrl]= "iconScuola">
   </agm-marker>
-<!--Marker Duomo-->
+
+  <!--Marker Duomo-->
   <agm-marker [latitude]= 45.464157 [longitude]= 9.191926 [iconUrl]= "iconDuomo">
   </agm-marker>
-<!--Marker Sesto-->
+
+  <!--Marker Sesto-->
   <agm-marker [latitude]= 45.534126 [longitude]= 9.231844 [iconUrl]= "iconPeru">
   </agm-marker>
-<!--Cerchio zona casa-->
+
+  <!--Cerchio zona casa-->
   <agm-circle [latitude]="latC"
   [longitude]="lngC"
   [radius]="1500"
   [fillColor]="colorC">
   </agm-circle>
-<!--Cerchio zona scuola-->
+
+  <!--Cerchio zona scuola-->
   <agm-circle [latitude]="latS"
   [longitude]="lngS"
   [radius]="1500"
   [fillColor]="'red'">
   </agm-circle>
-<!--visualizzazione triangolo-->
+
+  <!--visualizzazione triangolo-->
   <agm-polygon [paths]="triangle" [fillColor]="'blue'">
+</agm-polygon>
+
+ <!--visualizzazione rettangolo-->
+  <agm-polygon [paths]="rectangle" [fillColor]="colorR">
 </agm-polygon>
 </agm-map>
 
-<p>Bottoni per il cercio di casa:</p>
+<p>Colori per il cerchio:</p>
 <button (click)="onClickColor('green')">Green</button>
 <button (click)="onClickColor('blue')">Blue</button>
 <button (click)="onClickColor('yellow')">Yellow</button>
 
+<p>Bottoni per il rettangolo:</p>
+<button (click)="onClickRect('green')">Green</button>
+<button (click)="onClickRect('blue')">Blue</button>
+<button (click)="onClickRect('yellow')">Yellow</button>

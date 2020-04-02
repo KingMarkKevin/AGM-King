@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Point } from 'src/models/point.model';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Server mappe';
 
-  strC = ''
+  strC = '';
+  strR = '';
 
   latC: number = 45.500537;
   lngC: number = 9.149400;
@@ -17,16 +19,29 @@ export class AppComponent {
   lngS: number = 9.190766;
 
   colorC: string = '';
+  colorR: string = '';
 
   triangle: Array<Point> =
   [
-    {lngPoint:9.1, latPoint:45.5},
-    {lngPoint:9.0, latPoint:45.6},
-    {lngPoint:9.0, latPoint:45.4}
+    {lng:9.1, lat:45.5},
+    {lng:9.0, lat:45.6},
+    {lng:9.0, lat:45.4}
   ]
 
-  onClickColor(str){
-    this.colorC = str
+   rectangle: Array<Point> =
+  [
+    {lng:9.35, lat:45.54},
+    {lng:9.55, lat:45.54},
+    {lng:9.55, lat:45.44},
+    {lng:9.35, lat:45.44}
+  ]
+
+  onClickColor(strC){
+    this.colorC = strC
+  }
+
+  onClickRect(strR){
+    this.colorR = strR;
   }
 
   public iconHome = {
